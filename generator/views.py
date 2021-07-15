@@ -14,7 +14,7 @@ def password(request):
           jj=[]
           listofsmallCharacters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
           listofbigCharacters=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-          MixofUpperCase=listofsmallCharacters + listofbigCharacters
+          MixofUpperCase=listofsmallCharacters[0:length] + listofbigCharacters[0:length]
           random.shuffle(MixofUpperCase)
           result1 = MixofUpperCase[:len(listofsmallCharacters)]
           for value in range(1,length+1):
@@ -25,7 +25,7 @@ def password(request):
          new = []
          listOfSpecialCharacters=["@","_","!","#","$","%","^","&","*","()","<>","?","/","}","{","~",":"]
          for value in range(1,length+1):
-             new.append(random.choice(listOfSpecialCharacters))
+             new.append(random.choice(listOfSpecialCharacters[0:length]))
          return new;
 
     def numbers(length):
